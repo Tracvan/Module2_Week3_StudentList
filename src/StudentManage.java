@@ -65,5 +65,26 @@ public class StudentManage {
         }
         System.out.println("No student found with the id " + id +".");
     }
-
+    public void sortById(){
+        for(int i = 0; i<size-1; i++){
+            for(int j = i+1; j< size; j++){
+                if(studentList[i].getId() > studentList[j].getId()){
+                    Student temp = studentList[i];
+                    studentList[i] = studentList[j];
+                    studentList[j] = temp;
+                }
+            }
+        }
+    }
+    public void sortByName(){
+        for(int i = 0; i<size-1; i++){
+            for(int j = i+1; j< size; j++){
+                if(studentList[i].getName().compareToIgnoreCase(studentList[j].getName() ) > 0){
+                    Student temp = studentList[i];
+                    studentList[i] = studentList[j];
+                    studentList[j] = temp;
+                }
+            }
+        }
+    }
 }
